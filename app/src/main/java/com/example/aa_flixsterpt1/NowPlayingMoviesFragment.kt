@@ -37,10 +37,15 @@ class NowPlayingMoviesFragment : Fragment(), OnListFragmentInteractionListener {
         val client = AsyncHttpClient()
         val params = RequestParams()
         params.put("api_key", "5e0044139a88016b00ac28b744763d2b")
-        params.put("language", "en-US")
-        params.put("page", "1")
+        params.put("original_langauge", "en-US")
+        params.put("sort", "popularity.desc")
+        params.put("release_date", "2023-01-01")
+        params.put("genre_id", "27")
+
 
         Log.d("NowPlayingMoviesFragment", "Before API call")
+
+        // Change API endpoint here
         client.get("https://api.themoviedb.org/3/movie/now_playing", params, object : AsyncHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Array<out cz.msebera.android.httpclient.Header>?, responseBody: ByteArray?) {
                 progressBar.hide()
