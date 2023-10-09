@@ -1,4 +1,4 @@
-# Android Project 3 - AA-FlixsterPt1
+# Android Project 4 - AA-FlixsterPt2
 
 Submitted by: **Arlon Arvesu**
 
