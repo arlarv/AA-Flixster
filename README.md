@@ -1,4 +1,4 @@
-# Android Project 4 - *AA-Flixster (Spooky Edition)
+# Android Project 4 - *AA-Flixster (Spooky Edition)*
 
 Submitted by: **Arlon Arvesu**
 
