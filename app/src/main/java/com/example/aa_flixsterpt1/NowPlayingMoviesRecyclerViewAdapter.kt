@@ -27,6 +27,7 @@ class NowPlayingMoviesRecyclerViewAdapter(
         const val RELEASE_DATE_KEY = "release_date"
         const val TAGLINE_KEY = "tagline"
         const val MOVIE_DESCRIPTION_KEY = "overview"
+        const val MOVIE_ID_KEY = "id"
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -67,13 +68,15 @@ class NowPlayingMoviesRecyclerViewAdapter(
 
         holder.mView.setOnClickListener {
             val intent = Intent(holder.mView.context, MovieDetailActivity::class.java)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.MOVIE_ID_KEY, movie.id)
             intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.MOVIE_TITLE_KEY, movie.movie_title)
             intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.MOVIE_POSTER_KEY, movie.movie_poster)
-            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.BUDGET_KEY, movie.budget)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.BUDGET_KEY, movie.budget ?: 0)
             intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.RELEASE_DATE_KEY, movie.releaseDate)
             intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.TAGLINE_KEY, movie.tagline)
             intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.MOVIE_DESCRIPTION_KEY, movie.movie_description)
             holder.mView.context.startActivity(intent)
         }
+
     }
 }

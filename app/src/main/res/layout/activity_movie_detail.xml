@@ -36,13 +36,15 @@
         android:layout_width="363dp"
         android:layout_height="95dp"
         android:text="Sample movie description, blah blah blah"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:autoSizeMaxTextSize="20sp"
+        app:autoSizeMinTextSize="6dp"
         app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="10sp"
-        app:autoSizeMaxTextSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/movie_taglineTV"
+        app:layout_constraintVertical_bias="0.692"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -54,6 +56,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/movie_budgetTV"
         app:layout_constraintStart_toStartOf="@+id/movie_descriptionTV"
         app:layout_constraintTop_toBottomOf="@+id/movie_taglineTV"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
