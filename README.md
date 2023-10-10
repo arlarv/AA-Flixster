@@ -1,8 +1,8 @@
-# Android Project 4 - AA-FlixsterPt2
+# Android Project 4 - *AA-Flixster (Spooky Edition)
 
 Submitted by: **Arlon Arvesu**
 
-**AA-Flixster** is a movie browsing app that allows users to browse movies currently playing in theaters.
+**Name of your app** is a movie browsing app that allows users to browse ... [TODO] 
 
 Time spent: **10** hours spent in total
 
@@ -10,17 +10,18 @@ Time spent: **10** hours spent in total
 
 The following **required** functionality is completed:
 
-- [x] **Make a request to [The Movie Database API's `now_playing`](https://developers.themoviedb.org/3/movies/get-now-playing) endpoint to get a list of current movies**
-- [x] **Parse through JSON data and implement a RecyclerView to display all movies**
-- [x] **Use Glide to load and display movie poster images**
+- [x] **Choose any endpoint on The MovieDB API except `now_playing`**
+  - Chosen Endpoint: `https://api.themoviedb.org/3/discover/movie`
+  - Second Endpoint: `https://api.themoviedb.org/3/movie/{movieId}`
+- [x] **Make a request to your chosen endpoint and implement a RecyclerView to display all entries**
+- [x] **Use Glide to load and display at least one image per entry**
+- [x] **Click on an entry to view specific details about that entry using Intents**
 
 The following **optional** features are implemented:
 
-- [ ] Improve and customize the user interface through styling and coloring
-- [ ] Implement orientation responsivity
-  - App should neatly arrange data in both landscape and portrait mode
-- [ ] Implement Glide to display placeholder graphics during loading
-  - Note: this feature is difficult to capture in a GIF without throttling internet speeds.  Instead, include an additional screencap of your Glide code implementing the feature.  (<10 lines of code)
+- [ ] **Add another API call and RecyclerView that lets the user interact with different data.** 
+- [ ] **Add rounded corners to the images using the Glide transformations**
+- [ ] **Implement a shared element transition when user clicks into the details of a movie**
 
 The following **additional** features are implemented:
 
@@ -28,12 +29,12 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories: 
+Here's a walkthrough of implemented user stories:
 
-[GIF Walkthrough](i.imgur.com/EjZXfmh.gif)
-<img src='i.imgur.com/EjZXfmh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ScreenToGif
+GIF created with native Android Screen Recorder
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -41,11 +42,11 @@ GIF created with ScreenToGif
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+It took me a while to figure out that the initial API call wasn't providing the tags I needed for the extra details (tagline, budget) so I used a 2nd API call.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Arlon Arvesu]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -58,4 +59,4 @@ Describe any challenges encountered while building the app.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
+'+
