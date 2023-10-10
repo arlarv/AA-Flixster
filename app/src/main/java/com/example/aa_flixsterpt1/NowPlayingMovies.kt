@@ -1,17 +1,26 @@
 package com.example.aa_flixsterpt1
+
 import com.google.gson.annotations.SerializedName
 
-class NowPlayingMovies {
+data class NowPlayingMovies(
+    @SerializedName("id")
+    val id: Int,
 
     @SerializedName("original_title")
-    var movie_title: String? = null
+    val movie_title: String?,
 
     @SerializedName("overview")
-    var movie_description: String? = null
+    val movie_description: String?,
 
     @SerializedName("poster_path")
-    var movie_poster: String? = null
+    val movie_poster: String?,
 
+    @SerializedName("budget")
+    val budget: Int? = null, // Use Int for budget as it's an integer value in the JSON
 
+    @SerializedName("release_date")
+    val releaseDate: String?,
 
-}
+    @SerializedName("tagline")
+    val tagline: String? = null
+)

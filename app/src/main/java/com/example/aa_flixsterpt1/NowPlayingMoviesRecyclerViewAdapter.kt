@@ -1,5 +1,6 @@
 package com.example.aa_flixsterpt1
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,10 +20,22 @@ class NowPlayingMoviesRecyclerViewAdapter(
 )
     : RecyclerView.Adapter<NowPlayingMoviesRecyclerViewAdapter.MovieViewHolder>()
 {
+    companion object {
+        const val MOVIE_TITLE_KEY = "original_title"
+        const val MOVIE_POSTER_KEY = "poster_path"
+        const val BUDGET_KEY = "budget"
+        const val RELEASE_DATE_KEY = "release_date"
+        const val TAGLINE_KEY = "tagline"
+        const val MOVIE_DESCRIPTION_KEY = "overview"
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.fragment_now_playing_movies, parent, false)
         return MovieViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return movies.size
     }
 
     /**
@@ -53,15 +66,14 @@ class NowPlayingMoviesRecyclerViewAdapter(
             .into(holder.mMoviePoster)
 
         holder.mView.setOnClickListener {
-            holder.mItem?.let { book ->
-                mListener?.onItemClick(book)
-            }
+            val intent = Intent(holder.mView.context, MovieDetailActivity::class.java)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.MOVIE_TITLE_KEY, movie.movie_title)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.MOVIE_POSTER_KEY, movie.movie_poster)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.BUDGET_KEY, movie.budget)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.RELEASE_DATE_KEY, movie.releaseDate)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.TAGLINE_KEY, movie.tagline)
+            intent.putExtra(NowPlayingMoviesRecyclerViewAdapter.MOVIE_DESCRIPTION_KEY, movie.movie_description)
+            holder.mView.context.startActivity(intent)
         }
-    }
-    /**
-     * Remember: RecyclerView adapters require a getItemCount() method.
-     */
-    override fun getItemCount(): Int {
-        return movies.size
     }
 }
